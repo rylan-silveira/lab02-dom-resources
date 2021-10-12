@@ -45,6 +45,7 @@ function start() {
     bear = new Bear();
     // Add an event listener to the keypress event.
     document.addEventListener("keydown", moveBear, false)
+}
 
 this.fitBounds = function() {
     let parent = this.htmlElement.parentElement;
@@ -59,6 +60,7 @@ this.fitBounds = function() {
     if (this.y < 0) this.y = 0;
     if (this.y > h - ih) this.y = h - ih;
     };
+    {
     this.move = function(xDir, yDir) {
         this.fitBounds(); //we add this instruction to keep bear within board
         this.x += this.dBear * xDir;
@@ -66,3 +68,6 @@ this.fitBounds = function() {
         this.display();
         };
     }
+    
+
+
