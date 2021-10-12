@@ -45,7 +45,7 @@ function start() {
     bear = new Bear();
     // Add an event listener to the keypress event.
     document.addEventListener("keydown", moveBear, false)
-}
+
 this.fitBounds = function() {
     let parent = this.htmlElement.parentElement;
     let iw = this.htmlElement.offsetWidth;
@@ -65,4 +65,4 @@ this.fitBounds = function() {
         this.y += this.dBear * yDir;
         this.display();
         };
-   
+    }
