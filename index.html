@@ -2,28 +2,39 @@
 <html lang="en">
 <!---->
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>JavaScript and DOM API</title>
-    <link rel="stylesheet" type="text/css" href="game.css" media="all" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="game.js"></script>
-    <noscript>
-    Warning - JavaScript is Disabled.
-    For full functionality of this page, it is necessary to enable JavaScript.
-    </noscript>
     <script>
     var bear;
+    var bees;
+    var updateTimer;
+    var gamestart = false;
+    var updateVal;
+    var gameover;
+    var lastStingTime;
+    var i = 1;
     </script>
-       
 
+    <noscript>
+        Warning - JavaScript is Disabled.
+        For full functionality of this page, it is necessary to enable JavaScript.
+        </noscript>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JavaScript and DOM API</title>
+        <link rel="stylesheet" type="text/css" href="game.css" media="all" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript" script src="game.js"></script>
+        </head>
        <body onload="start();">
         <div id="title">
             <h1>Help the bear escape the bees !</h1>
-            <p>Bear tries to avoid being stung by <input type="text" id="nbBees" value="1" size="3"> bees by running and jumping. The objective is to have as less stings as possible!</p>
+            <p>Bear tries to avoid being stung by <input type="text" id="nbBees" value="1" size="3"/> bees by running and jumping. The objective is to have as less stings as possible!</p>
+            <p>
+                Enter the speed for the bear:
+                <input type="text" id="speedBear" value="50" size="3" onchange="setSpeed();"/>
+               px/ms </p>
             <p>You can ajust bees' speed <input type="text" id="speedBees" value="50" size="3"> px/ms
                 <br> and the refresh period <input type="text" id="periodTimer" value="10" size="3"> ms </p>
             <h2>Press left, right, up, down keys to move the bear</h2>
-
+            <button type="button" id="addbeebtn" class="button" onclick="addbees()">Add bees</button>        
         </div>
         <div id="scores">
             <table>
@@ -39,7 +50,9 @@
 
         </div>
         <div id="board">
+            
             <img src="./images/bear.gif" id="bear" alt="bear">
+            
         </div>
     </body>
 
