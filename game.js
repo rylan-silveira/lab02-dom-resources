@@ -219,7 +219,6 @@ function Bear() {
       document.getElementById("duration").innerHTML = longestDuration;
     }
   }
-  
   function overlap(element1, element2) {
     //consider the two rectangles wrapping the two elements
     //rectangle of the first element
@@ -241,4 +240,4 @@ function Bear() {
       return false;
     }
     return true;
-  }
+    }
